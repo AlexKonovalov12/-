@@ -113,7 +113,6 @@ myCart.products = cardPlusButtonsArr.forEach((cardPlus) => {
 });
 
 
-
 myCart.products = cardMinusButtonsArr.forEach((cardMinus) => {
     cardMinus.addEventListener("click", (e) => {
         e.preventDefault();
@@ -148,115 +147,126 @@ myCart.products = cardMinusButtonsArr.forEach((cardMinus) => {
     });
 });
 
+let emptyCart = document.querySelector(".empty-cart");
+let fillCart = document.querySelector(".fill-cart");
+
 
 function popupContainerFill() {
-    const popupContainer = document.querySelector("#popup_container");
     const popupProductList = document.querySelector("#popup_product_list");
     const popupCost = document.querySelector("#popup_cost");
 
     popupProductList.innerHTML = null;
     const savedCart = JSON.parse(localStorage.getItem("cart"));
     myCart.products = savedCart.products;
-    const productsHTML = myCart.products.map((product) => {
-        const productItem = document.createElement("div");
-        productItem.classList.add("popup__product");
+    if (myCart.products.length > 0) {
+        emptyCart.style.display = 'none';
+        fillCart.style.display = 'block';
+        const productsHTML = myCart.products.map((product) => {
+            const productItem = document.createElement("div");
+            productItem.classList.add("popup__product");
 
-        const productWrap1 = document.createElement("div");
-        productWrap1.classList.add("popup__product-wrap");
-        const productWrap2 = document.createElement("div");
-        productWrap2.classList.add("popup__product-wrap");
+            const productWrap1 = document.createElement("div");
+            productWrap1.classList.add("popup__product-wrap");
+            const productWrap2 = document.createElement("div");
+            productWrap2.classList.add("popup__product-wrap");
 
-        const productImage = document.createElement("img");
-        productImage.classList.add("popup__product-image");
-        productImage.setAttribute("src", product.imageSrc);
+            const productImage = document.createElement("img");
+            productImage.classList.add("popup__product-image");
+            productImage.setAttribute("src", product.imageSrc);
 
-        const productTitle = document.createElement("h2");
-        productTitle.classList.add("popup__product-title");
-        productTitle.innerHTML = product.name;
+            const productTitle = document.createElement("h2");
+            productTitle.classList.add("popup__product-title");
+            productTitle.innerHTML = product.name;
 
-        const productPlus = document.createElement("button");
-        productPlus.classList.add("button-plus");
-        productPlus.innerHTML = "+";
+            const productPlus = document.createElement("button");
+            productPlus.classList.add("button-plus");
+            productPlus.innerHTML = "+";
 
-        const productMinus = document.createElement("button");
-        productMinus.classList.add("button-minus");
-        productMinus.innerHTML = "-";
-        
-        const productQuantity = document.createElement("h2");
-        productQuantity.classList.add("popup__product-quantity");
-        productQuantity.innerHTML = product.quantity + ' шт';
+            const productMinus = document.createElement("button");
+            productMinus.classList.add("button-minus");
+            productMinus.innerHTML = "-";
 
-        const productPrice = document.createElement("div");
-        productPrice.classList.add("popup__product-price");
-        productPrice.innerHTML = toCurrency((toNum(product.price) * product.quantity));
+            const productQuantity = document.createElement("h2");
+            productQuantity.classList.add("popup__product-quantity");
+            productQuantity.innerHTML = product.quantity + ' шт';
 
-        const productDelete = document.createElement("button");
-        productDelete.classList.add("popup__product-delete");
-        productDelete.innerHTML = "✖";
-
-        productDelete.addEventListener("click", () => {
-            let removingProduct = myCart.products.findIndex(item => item.name == product.name);
-            myCart.removeProduct(removingProduct);
-            changeLocalStorage();
-            popupContainerFill();
-        });
-
-        productPlus.addEventListener("click", (e) => {
-            e.target.classList.add("plus_selected");
-        
-            myCart.products = savedCart.products;
-            product.quantity++
-            changeLocalStorage();
-            productQuantity.innerHTML = product.quantity + ' шт'
+            const productPrice = document.createElement("div");
+            productPrice.classList.add("popup__product-price");
             productPrice.innerHTML = toCurrency((toNum(product.price) * product.quantity));
-            popupCost.value = toCurrency(myCart.cost);
-            setTimeout(() => {
-                e.target.classList.remove("plus_selected");
-            }, 100);
-        });
 
-        productMinus.addEventListener("click", (e) => {
-            e.target.classList.add("plus_selected");
-            
-            myCart.products = savedCart.products;
-            
-            if (product.quantity > 1) {
-                product.quantity--
-                productPrice.innerHTML = toCurrency((toNum(product.price) * product.quantity));
-                changeLocalStorage();
-                productQuantity.innerHTML = product.quantity + ' шт'
-            } else {
+            const productDelete = document.createElement("button");
+            productDelete.classList.add("popup__product-delete");
+            productDelete.innerHTML = "✖";
+
+            productDelete.addEventListener("click", () => {
                 let removingProduct = myCart.products.findIndex(item => item.name == product.name);
                 myCart.removeProduct(removingProduct);
                 changeLocalStorage();
                 popupContainerFill();
+            });
+
+            productPlus.addEventListener("click", (e) => {
+                e.target.classList.add("plus_selected");
+
+                myCart.products = savedCart.products;
+                product.quantity++
+                changeLocalStorage();
+                productQuantity.innerHTML = product.quantity + ' шт'
+                productPrice.innerHTML = toCurrency((toNum(product.price) * product.quantity));
                 popupCost.value = toCurrency(myCart.cost);
-                return;
-            }
-            popupCost.value = toCurrency(myCart.cost);
-            setTimeout(() => {
-                e.target.classList.remove("plus_selected");
-            }, 100);
-        })
+                setTimeout(() => {
+                    e.target.classList.remove("plus_selected");
+                }, 100);
+            });
 
-        productWrap1.appendChild(productImage);
-        productWrap1.appendChild(productTitle);
-        productWrap2.appendChild(productMinus);
-        productWrap2.appendChild(productQuantity);
-        productWrap2.appendChild(productPlus);
-        productWrap2.appendChild(productPrice);
-        productWrap2.appendChild(productDelete);
-        productItem.appendChild(productWrap1);
-        productItem.appendChild(productWrap2);
+            productMinus.addEventListener("click", (e) => {
+                e.target.classList.add("plus_selected");
 
-        return productItem;
-    });
+                myCart.products = savedCart.products;
 
-    productsHTML.forEach((productHTML) => {
-        popupProductList.appendChild(productHTML);
-    });
+                if (product.quantity > 1) {
+                    product.quantity--
+                    productPrice.innerHTML = toCurrency((toNum(product.price) * product.quantity));
+                    changeLocalStorage();
+                    productQuantity.innerHTML = product.quantity + ' шт'
+                } else {
+                    let removingProduct = myCart.products.findIndex(item => item.name == product.name);
+                    myCart.removeProduct(removingProduct);
+                    changeLocalStorage();
+                    popupContainerFill();
+                    popupCost.value = toCurrency(myCart.cost);
+                    return;
+                }
+                popupCost.value = toCurrency(myCart.cost);
+                setTimeout(() => {
+                    e.target.classList.remove("plus_selected");
+                }, 100);
+            })
 
-    popupCost.value = toCurrency(myCart.cost);
+            productWrap1.appendChild(productImage);
+            productWrap1.appendChild(productTitle);
+            productWrap2.appendChild(productMinus);
+            productWrap2.appendChild(productQuantity);
+            productWrap2.appendChild(productPlus);
+            productWrap2.appendChild(productPrice);
+            productWrap2.appendChild(productDelete);
+            productItem.appendChild(productWrap1);
+            productItem.appendChild(productWrap2);
+
+            return productItem;
+        });
+
+        productsHTML.forEach((productHTML) => {
+            popupProductList.appendChild(productHTML);
+        });
+
+        popupCost.value = toCurrency(myCart.cost);
+    } else {
+        emptyCart.style.display = 'block';
+        fillCart.style.display = 'none';
+    }
+    
 }
+
 
 popupContainerFill()

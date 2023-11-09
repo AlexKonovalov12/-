@@ -218,6 +218,11 @@ li:last-child {
     border: 2px solid #EB1C24;
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
     border-radius: 28px;
+    transition: all 1s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .header-enter-button p {
@@ -431,18 +436,21 @@ li:last-child {
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 2px;
-    color: #fff;
-    padding: 14px 20px;
-    background: #EB1C24;
-    border-radius: 800px;
+    color: white;
+    padding: 10px 20px;
+    background-color: #EB1C24;
     border: none;
+    border-radius: 800px;
+
     width: 200px;
     height: 48px;
     text-transform: uppercase;
+    box-shadow: rgb(207 8 8 / 44%) 3px 3px 10px;
+    transition: all 0.5s linear;
 }
 
 .discount-buy:hover {
-    color: black;
+    transform: scale(1.1);
 }
 
 hr {
@@ -940,10 +948,13 @@ hr {
     line-height: 19px;
     color: #fff;
     text-decoration: none;
+    transition: all 0.5s linear;
 }
 
 .card-cart-discount-button:hover {
-    color: #000000;
+    color: #EB1C24;
+    background-color: white;
+
 }
 
 .cart-add-text {
@@ -1135,13 +1146,12 @@ nav a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 1s ease;
-
-    &:hover {
-        background: #EB1C24;
-        color: white;
-    }
 }
 
+.button_active {
+    background: #EB1C24;
+    color: white;
+}
 
 .discount-buy a {
     text-decoration: none;
@@ -1603,11 +1613,16 @@ nav a:hover {
     background: #ffffff;
     color: #EB1C24;
     border: 2px solid #EB1C24;
-
     margin-top: 50px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: all 1s;
+
+    &:hover {
+        background: #EB1C24;
+            color: #ffffff;
+    }
 }
 
 .order_button {
@@ -1763,6 +1778,7 @@ nav a:hover {
     padding-bottom: 20px;
     border-bottom: 1px solid #D7D4CC;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 
     & img {
         width: 48px;
@@ -1774,6 +1790,7 @@ nav a:hover {
 
 .order_container_description {
     flex-grow: 1;
+    cursor: pointer;
 }
 
 .order_container_description p {
@@ -1867,6 +1884,11 @@ nav a:hover {
     border-radius: 800px;
     color: #000;
     transition: all 1s;
+
+    &:hover {
+        background: #EB1C24;
+        color: #fff;
+    }
 }
 
 .cart_buttons {
@@ -1931,12 +1953,14 @@ nav a:hover {
 .popup__product-wrap {
     display: flex;
     align-items: center;
+
     & .button-minus {
         margin-right: 10px;
     }
-        & .button-plus {
-            margin-right: 10px;
-        }
+
+    & .button-plus {
+        margin-right: 10px;
+    }
 }
 
 .popup__product-image {
@@ -2092,6 +2116,109 @@ nav a:hover {
     border-radius: 800px;
     color: #000000;
     transition: all 1s;
+}
+
+.account {
+    display: flex;
+    gap: 30px;
+}
+
+.account_card {
+    background-image: url(../images/bgdicount.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-grow: 1;
+    border-radius: 8px;
+    height: 200px;
+    padding: 25px;
+    font-family: 'SF Pro Text'
+}
+
+.bonus_head {
+    color: #000;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.bonus_text {
+    color: #EB1C24;
+    font-size: 32px;
+}
+
+.add-address-block {
+    margin-top: 30px;
+    display: none;
+    opacity: 0;
+}
+
+.add-address-block-show {
+    display: block;
+    animation-name: block-show;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes block-show {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.last_order {
+    width: 100%;
+    display: none;
+    opacity: 0;
+}
+
+.last_order-show {
+    display: block;
+    animation-name: block-show;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.last_order_product {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    margin-left: 70px;
+
+    & p {
+        margin: 0;
+        width: 300px;
+    }
+}
+
+p.last_order_product_quantity {
+    margin-left: 20px;
+    color: #EB1C24;
+}
+
+
+.empty_header {
+    color: #302e2e;
+    margin-bottom: 20px;
+}
+
+.empty_link {
+    text-decoration: none;
+    color: #eb1c23bd;
+    font-size: 30px;
+    &:hover {
+        color: #EB1C24;
+    }
 }
 
 @media(max-width:1000px) {
@@ -2437,6 +2564,7 @@ nav a:hover {
     .order_container {
         flex-wrap: wrap;
         row-gap: 20px;
+        justify-content: end;
     }
 
     .order_container_description {
@@ -2509,22 +2637,51 @@ nav a:hover {
 
         &:first-child {
             justify-content: space-between;
-        };
+        }
+
+        ;
 
         &:last-child {
             justify-content: end;
-        };
+        }
+
+        ;
     }
 
-        .order__product-image {
-            width: 70px;
-            height: 70px;
-           
+    .order__product-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .order__product-title {
+        font-size: 20px;
+    }
+
+    .account {
+        flex-wrap: wrap;
+
+        & .row {
+            order: 2;
         }
-    
-        .order__product-title {
-           
-            font-size: 20px;
-            
+    }
+
+    .account_card {
+        order: 1;
+    }
+
+    .last_order_product {
+
+        margin-left: 20px;
+
+        & p {
+            margin: 0;
+            width: 200px;
         }
+    }
+
+    p.last_order_product_quantity {
+        margin-left: 20px;
+        color: #EB1C24;
+        width: 50px;
+    }
 }

@@ -96,7 +96,7 @@ const checkPassword = () => {
         if (!isRequired(password)) {
             showError(passwordEl, 'Введите пароль!');
         } else if (!isPasswordSecure(password)) {
-            showError(passwordEl, 'Пароль должен содержать не менее 8 символов, которые включают по крайней мере 1 символ нижнего регистра, 1 символ верхнего регистрf и 1 цифру');
+            showError(passwordEl, 'Пароль должен содержать не менее 8 символов, которые включают по крайней мере 1 символ нижнего регистра, 1 символ верхнего регистра и 1 цифру');
         } else {
             showSuccess(passwordEl);
             valid = true;
@@ -219,5 +219,18 @@ form.addEventListener('input', debounce(function (e) {
         case 'address':
             checkAddress()
             break;
+    }
+    const submit = document.querySelector("button[type=submit]")
+    let allValid = false;
+    if (checkUsername() && checkPhone() && checkEmail() && checkPassword() && checkConfirmPassword() && checkTextarea() && checkAddress()) {
+        allValid = true;
+    }
+
+    if (allValid) {
+        submit.removeAttribute("disabled");
+        submit.classList.add("button_active")
+    } else {
+        submit.setAttribute("disabled", ""); 
+        submit.classList.remove("button_active")
     }
 }));

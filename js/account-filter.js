@@ -19,13 +19,27 @@ filter.addEventListener('click', (event) => {
     }
 })
 
-let avatar = document.querySelector(".account_enter").querySelector("p");
-const avatarsContainer = document.querySelector(".emoji_container");
-
-avatarsContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('avatar')) {
-        avatarsContainer.querySelector(".active_avatar").classList.remove("active_avatar");
-        avatar.textContent = event.target.textContent;
-        event.target.classList.add("active_avatar");
-    }
+let addAddress = document.querySelector(".add_address");
+addAddress.addEventListener('click', () => {
+    document.querySelector(".add-address-block").classList.toggle("add-address-block-show");
+    addAddress.scrollIntoView(top)
 })
+
+let lastOrder = document.querySelectorAll(".order_container_description");
+lastOrder.forEach((el) => {
+    el.addEventListener('click', () => {
+        el.parentElement.querySelector(".last_order").classList.toggle('last_order-show')
+    })
+})
+
+
+// let avatar = document.querySelector(".account_enter").querySelector("p");
+// const avatarsContainer = document.querySelector(".emoji_container");
+
+// avatarsContainer.addEventListener('click', (event) => {
+//     if (event.target.classList.contains('avatar')) {
+//         avatarsContainer.querySelector(".active_avatar").classList.remove("active_avatar");
+//         avatar.textContent = event.target.textContent;
+//         event.target.classList.add("active_avatar");
+//     }
+// })

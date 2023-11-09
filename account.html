@@ -161,50 +161,53 @@
                                     Александр, добрый вечер </h1>
                             </div>
                         </div>
-                        <div class="emoji_container">
+                        <!-- <div class="emoji_container">
                             <p class="avatar">👩</p>
                             <p class="avatar active_avatar">🧑</p>
                             <p class="avatar">🐰</p>
                             <p class="avatar">🦁</p>
                             <p class="avatar">🐻</p>
+                        </div> -->
+                        <div class="account">
+                            <div class="row p-0 m-0 mb-48 ">
+                                <form class="cart-form" id="profile_form">
+                                    <div class="form-floating">
+                                        <input class="form-control cart-input mb-8" type="text" name="name" placeholder="Имя">
+                                        <label for="name">Имя</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input class="form-control cart-input mb-8" type="text" name="family" placeholder="Имя">
+                                        <label for="family">Фамилия</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input class="form-control cart-input mb-8" type="text" name="phone" id="form-phone" placeholder="Телефон"
+                                            inputmode="tel">
+                                        <label for="phone">Телефон</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input class="form-control cart-input mb-8" type="email" name="email" placeholder="Улица, дом и квартира">
+                                        <label for="email">E-mail</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input class="form-control cart-input mb-8" type="date" name="birthday" placeholder="Количество персон">
+                                        <label for="birthday">День рождения</label>
+                                    </div>
+                                    <div class="selection-field">
+                                        <select>
+                                            <option>Пол</option>
+                                            <option>Мужской</option>
+                                            <option>Женский</option>
+                                        </select>
+                                    </div>
+                                    <button class="form_button" type="submit">Сохранить</button>
+                                </form>
+                            </div>
+                            <div class="account_card">
+                                <div class="bonus_head">Ваш баланс:</div>
+                                <div class="bonus_text">300 баллов</div>
+                            </div>
                         </div>
-                        <div class="row p-0 m-0 mb-48 ">
-                            <form class="cart-form" id="profile_form">
-                                <div class="form-floating">
-                                    <input class="form-control cart-input mb-8" type="text" name="name"
-                                        placeholder="Имя">
-                                    <label for="name">Имя</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control cart-input mb-8" type="text" name="family"
-                                        placeholder="Имя">
-                                    <label for="family">Фамилия</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control cart-input mb-8" type="text" name="phone" id="form-phone"
-                                        placeholder="Телефон" inputmode="tel">
-                                    <label for="phone">Телефон</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control cart-input mb-8" type="email" name="email"
-                                        placeholder="Улица, дом и квартира">
-                                    <label for="email">E-mail</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control cart-input mb-8" type="date" name="birthday"
-                                        placeholder="Количество персон">
-                                    <label for="birthday">День рождения</label>
-                                </div>
-                                <div class="selection-field">
-                                    <select>
-                                        <option>Пол</option>
-                                        <option>Мужской</option>
-                                        <option>Женский</option>
-                                    </select>
-                                </div>
-                                <button class="form_button" type="submit">Сохранить</button>
-                            </form>
-                        </div>
+                        
                     </div>
 
                     <div class="account_block" data-name="orders">
@@ -228,6 +231,25 @@
                             </div>
                             <div class="order_container_price">944 ₽</div>
                             <button class="order_container_repeat_btn">Повторить</button>
+                            <div class="last_order">
+                                <div class="last_order_product">
+                                    <img src="images/rolls/cold1.jpg">
+                                    <p>Годзилла с лососем XL</p>
+                                    <p class="last_order_product_quantity">1 шт</p>
+                                </div>
+                                <div class="last_order_product">
+                                    <img src="images/rolls/cold1.jpg">
+                                    <p>Соус Сифудо</p>
+                                    <p class="last_order_product_quantity">1 шт</p>
+                                </div>
+                                <div class="last_order_product">
+                                    <img src="images/rolls/cold1.jpg">
+                                    <p>Имбирь + васаби + соевый соус</p>
+                                    <p class="last_order_product_quantity">1 шт</p>
+                                </div>
+                                
+
+                            </div>
                         </div>
                         <div class="order_container">
                             <img src="images/rolls/cold1.jpg">
@@ -237,34 +259,27 @@
                             </div>
                             <div class="order_container_price">944 ₽</div>
                             <button class="order_container_repeat_btn">Повторить</button>
-                        </div>
-                        <div class="order_container">
-                            <img src="images/rolls/cold1.jpg">
-                            <div class="order_container_description">
-                                <p>Заказ №80001 – 20.03.2023</p>
-                                <p>1 × Годзилла с лососем XL, 1 × Соус Сифудо, 1 × Имбирь + васаби + соевый соус</p>
+                            <div class="last_order">
+                                <div class="last_order_product">
+                                    <img src="images/rolls/cold1.jpg">
+                                    <p>Годзилла с лососем XL</p>
+                                    <p class="last_order_product_quantity">1 шт</p>
+                                </div>
+                                <div class="last_order_product">
+                                    <img src="images/rolls/cold1.jpg">
+                                    <p>Соус Сифудо</p>
+                                    <p class="last_order_product_quantity">1 шт</p>
+                                </div>
+                                <div class="last_order_product">
+                                    <img src="images/rolls/cold1.jpg">
+                                    <p>Имбирь + васаби + соевый соус</p>
+                                    <p class="last_order_product_quantity">1 шт</p>
+                                </div>
+                            
+                            
                             </div>
-                            <div class="order_container_price">944 ₽</div>
-                            <button class="order_container_repeat_btn">Повторить</button>
                         </div>
-                        <div class="order_container">
-                            <img src="images/rolls/cold1.jpg">
-                            <div class="order_container_description">
-                                <p>Заказ №80001 – 20.03.2023</p>
-                                <p>1 × Годзилла с лососем XL, 1 × Соус Сифудо, 1 × Имбирь + васаби + соевый соус</p>
-                            </div>
-                            <div class="order_container_price">944 ₽</div>
-                            <button class="order_container_repeat_btn">Повторить</button>
-                        </div>
-                        <div class="order_container">
-                            <img src="images/rolls/cold1.jpg">
-                            <div class="order_container_description">
-                                <p>Заказ №80001 – 20.03.2023</p>
-                                <p>1 × Годзилла с лососем XL, 1 × Соус Сифудо, 1 × Имбирь + васаби + соевый соус</p>
-                            </div>
-                            <div class="order_container_price">944 ₽</div>
-                            <button class="order_container_repeat_btn">Повторить</button>
-                        </div>
+                       
 
                     </div>
 
@@ -289,14 +304,7 @@
                             <button class="adress_container_delete_btn">Удалить</button>
                             <button class="adress_container_change_btn">Изменить</button>
                         </div>
-                        <div class="order_container">
-                            <div class="order_container_description">
-                                <p>Мама</p>
-                                <p>Ул. Полины Осипенко, 14к1, кв. 17, подъезд 2, код 24к3541</p>
-                            </div>
-                            <button class="adress_container_delete_btn">Удалить</button>
-                            <button class="adress_container_change_btn">Изменить</button>
-                        </div>
+                       
                         <div class="order_container">
                             <div class="order_container_description">
                                 <p>Офис</p>
@@ -306,9 +314,30 @@
                             <button class="adress_container_change_btn">Изменить</button>
                         </div>
                         <div class="add_address">
-                            <a href="add-address.html">Новый адрес</a>
+                            <a href="#">+ Добавить новый адрес</a>
                         </div>
-
+                        <div class="row p-0 m-0 mb-48 add-address-block">
+                            <form class="cart-form" id="add-address-form">
+                                <div class="form-floating">
+                                    <input class="form-control cart-input mb-8" type="text" name="address" placeholder="Улица, дом и квартира">
+                                    <label for="address">Улица, дом и квартира</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control cart-input mb-8" type="text" name="else" placeholder="Имя">
+                                    <label for="else">Дополнительно</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control cart-input mb-8" type="text" name="comment" placeholder="Комментарий">
+                                    <label for="address">Комментарий (вход с торца)</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control cart-input mb-8" type="text" name="name" placeholder="">
+                                    <label for="phone">Название адреса</label>
+                                </div>
+                        
+                                <button class="form_button" type="submit">Добавить</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
