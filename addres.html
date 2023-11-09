@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Суши Сити</title>
+</head>
+
+<body>
+    <header class="mw-1032 container d-lg-flex">
+        <div class="row p-0 m-0 justify-content-between" style="width: 100%;">
+            <div class="col-auto p-0 logotype_container">
+                <a href="index.html">
+                    <img class="img-fluid header-logo" src="images/logo.png" alt="Логотип суши сити">
+                </a>
+            </div>
+            <div class="col-auto p-0 m-0 d-none d-lg-flex flex-column justify-content-center">
+                <nav>
+                    <ul class="p-0 m-0 navigation_list">
+                        <li>
+                            <a href="catalog.html">Меню</a>
+                        </li>
+                        <li>
+                            <a href="addres.html">Доставка и адреса</a>
+                        </li>
+                
+                        <li>
+                            <a href="stocks.html">Акции</a>
+                        </li>
+                
+                        <li>
+                            <a href="feedback.html">Оставить отзыв</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-auto p-0 m-0 d-flex d-flex flex-column justify-content-center">
+                <p class="p-0 m-0 text-end header-city ">Чита</p>
+                <a class="header-phone" href="tel:+73022575656"><span>+7 3022 </span> 57-56-56</a>
+            </div>
+            <div class="col-auto d-lg-block cart_container p-0 m-0">
+                <div class="input-wrapper" id="cart">
+                    <a href="cart.html">
+                        <button class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 576 512"
+                                fill="#eb1c24">
+
+                                <path
+                                    d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                            </svg>
+                        </button>
+                    </a>
+                    <div class="cart__num" id="cart_num">0</div>
+                </div>
+
+
+            </div>
+            <div class="col-auto p-0 m-0">
+                <a href="account.html">
+                    <button class="account_enter p-0 ">
+                        <p class="m-0 p-0  d-lg-inline-block">🧑</p>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="modal background-white fade modal-fullscreen-sm-down" id="staticBackdrop" data-bs-backdrop="static"
+            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog background-none m-0">
+                <div class="modal-content background-none">
+                    <div class="modal-header border-0">
+                        <div class="row p-0 m-0 justify-content-between">
+                            <div class="col-auto p-0 me-auto m-lg-0">
+                                <img class="img-fluid header-logo" src="images/logo.png" alt="Логотип суши сити">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body background-none border-0 mt-58">
+                        <div class="col-lg col-12 p-0 order-lg-1 order-2 mr-23 border-none">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="0" class="active" aria-current="true"
+                                        aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="images/akcii.jpg" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/akcii.jpg" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/akcii.jpg" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-140">
+                                <a href="addres.html" class="mobile-link-modal d-block text-center">Доставка и
+                                    адреса</a>
+
+                                <a href="stocks.html" class="mobile-link-modal d-block text-center">Акции</a>
+                                <a href="feedback.html" class="mobile-link-modal d-block text-center">Оставить отзыв</a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer background-none border-0">
+                        <div class="ico-wrapper d-flex justify-content-center align-items-center mt-48"
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img src="images/close.png" alt="" class="img-fluid" data-bs-dismiss="modal">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="addres_title  d-inline-block d-lg-block mb-48">Доставка и адреса</h1>
+
+        <div class="addres_block_flex container">
+            <div class="addres_block_flex_left">Адреса</div>
+            <div class="addres_block_flex_right">
+                <div class="addresses_block">
+                    <div class="red_text">Фадеева, 39</div>
+                    <div class="grey_text">Доставка и самовывоз с 10:00 до 23:00</div>
+                    <div class="addres_phone_container">
+                        <div>
+                            <a href="tel:+73022575656">+7 (3022) 57-56-56</a>
+                        </div>
+                        <div>
+                            <a href="tel:+79143679071">+7-914-367-90-71</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="addresses_block">
+                    <div class="red_text">Карла-Маркса, 93</div>
+                    <div class="grey_text">Доставка и самовывоз с 10:00 до 23:00</div>
+                    <div class="addres_phone_container">
+                        <div>
+                            <a href="tel:+73022575656">+7 (3022) 57-56-56</a>
+                        </div>
+                        <div>
+                            <a href="tel:+79143512640">+7-914-351-26-40</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="addresses_block">
+                    <div class="red_text">Ленинградская, 32</div>
+                    <div class="grey_text">Доставка и самовывоз с 10:00 до 23:00</div>
+                    <div class="addres_phone_container">
+                        <div>
+                            <a href="tel:+73022575656">+7 (3022) 57-56-56</a>
+                        </div>
+                        <div>
+                            <a href="tel:+79143590826">+7-914-359-08-26</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="addres_block_flex container">
+            <div class="addres_block_flex_left">Зоны доставки</div>
+            <div class="addres_block_flex_right">
+                <div class="map">
+                    <img src="./images/map.png" class="map_image">
+                </div>
+                <div class="grey_text">Зоны доставки обозначены на карте. Доставка за пределы обозначенных на карте зон
+                    возможна ТОЛЬКО после предварительного
+                    согласования с администратором магазина. Условия доставки за пределы указанных на карте зон могут
+                    отличаться от условий
+                    доставки в пределах этих зон. Подробности у администратора магазина.
+                </div>
+
+                <div class="zone_container">
+                    <div class="zone_block">
+                        <div class="zone_image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                fill="none">
+                                <path
+                                    d="M16.2656 1H30.2902L22.1284 15.5097L21.8154 16.0662L22.1885 16.5843L30.0478 27.5H16H15.8919L15.7863 27.5231L1 30.7576V16.2569L6.24055 6.72858L16.2656 1Z"
+                                    fill="#E2807B" stroke="#DB554A" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="zone_description">
+                            <div style="color: #EB1C24;">Красная зона</div>
+                            <div class="grey_text">Доставка бесплатная при заказе от 590 рублей.</div>
+                        </div>
+                    </div>
+
+                    <div class="zone_block">
+                        <div class="zone_image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                fill="none">
+                                <path
+                                    d="M5.75052 4.61954L15.3103 13.7241L17 15.3333V13V4H31V24.5H16H15.8919L15.7863 24.5231L1 27.7576V13.2569L5.75052 4.61954Z"
+                                    fill="#F9DD72" stroke="#F8D350" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="zone_description">
+                            <div style="color: #F8D350;">Желтая зона</div>
+                            <div class="grey_text">Доставка бесплатная при заказе от 790 рублей.</div>
+                        </div>
+                    </div>
+
+                    <div class="zone_block">
+                        <div class="zone_image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                fill="none">
+                                <path
+                                    d="M15.6968 13.9529L16.4037 14.1779L16.824 13.5665L22.0911 5.90539L30.8565 4.23578L29.0386 20.5975L23.024 28H1V13.5207L5.1682 10.6029L15.6968 13.9529Z"
+                                    fill="#E692D3" stroke="#E481BE" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="zone_description">
+                            <div style="color: #E481BE;">Фиолетовая зона</div>
+                            <div class="grey_text">Доставка бесплатная при заказе от 1000 рублей.</div>
+                        </div>
+                    </div>
+
+                    <div class="zone_block">
+                        <div class="zone_image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                fill="none">
+                                <path
+                                    d="M15 16L15 17L16 17L31 17L31 31L16 31L4.18407 31L0.999999 22.8124L1 9.58485L15 1.70985L15 16Z"
+                                    fill="#79C15A" stroke="#51A833" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="zone_description">
+                            <div style="color: #51A833;">Зеленая зона</div>
+                            <div class="grey_text">Доставка бесплатная при заказе от 1590 рублей.</div>
+                        </div>
+                    </div>
+
+                    <div class="zone_block">
+                        <div class="zone_image">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                fill="none">
+                                <path
+                                    d="M10.8356 22.0136L10.4694 22.0746L10.2318 22.3598L3.81738 30.0571L0.999999 22.8124L1 9.58485L16.2619 1L24.1058 1L31 7.43455L31 18.6529L10.8356 22.0136Z"
+                                    fill="#74B3F5" stroke="#4797F6" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="zone_description">
+                            <div style="color: #4797F6;">Синяя зона</div>
+                            <div class="grey_text">Доставка бесплатная при заказе от 1890 рублей.</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="grey_text">С 20:00 решение о возможности доставки в районы синей зоны принимает
+                    администратор. Стоимость доставки при заказе на
+                    меньшую сумму следует уточнять у администратора магазина*</div>
+                <div class="grey_text">*стоимость доставки при заказе на меньшую сумму:<br>
+                    В районы с минимальной суммой для бесплатной доставки 590 р. - 150 рублей.<br>
+                    В районы с минимальной суммой для бесплатной доставки 790 р., 1000 р. - 200 рублей.<br>
+                    В районы с минимальной суммой для бесплатной доставки 1590 р. - 250 рублей.<br>
+                    В районы с минимальной суммой для бесплатнойдоставки 1890 р. – от 300 рублей (в зависимости от
+                    района).</div>
+                <div class="grey_text">Если при оплате заказа используются скидки и бонусы, можно воспользоваться
+                    услугой бесплатной доставки при условии:
+                    сумма итогового заказа с учетом всех бонусов и скидок (сумма к оплате) должна быть не менее суммы
+                    обычного минимального
+                    заказа для бесплатной доставки в соответствующий район.</div>
+                <div class="grey_text">В праздничные и предпраздничные дни (1-8 и 13-14 января, 14 и 22-27 февраля, 7-9
+                    марта, 1 сентября, 29-31 декабря и
+                    т.п.) в условиях доставки возможны изменения. Просьба уточнять условия у администраторов.</div>
+
+            </div>
+        </div>
+
+        <div class="addres_block_flex container">
+            <div class="addres_block_flex_left">Оплата и доставка</div>
+            <div class="addres_block_flex_right">
+                <div class="addresses_block">
+                    <div class="red_text">Время приёма заказов</div>
+                    <div class="grey_text">С 10 до 23 часов (время доставки в отдаленные районы и возможность доставки
+                        после 20 часов уточняйте у администратора
+                        магазина).</div>
+
+                </div>
+                <div class="addresses_block">
+                    <div class="red_text">Бесконтактная доставка</div>
+                    <div class="grey_text">Вы можете бесплатно воспользоваться услугой "бесконтактная доставка". Для
+                        этого сделайте заказ и оплатите его на сайте,
+                        укажите в комментариях, что хотите воспользоваться бесконтактной доставкой. Курьер в перчатках и
+                        маске оставит заказ
+                        около двери и отойдет на безопасное расстояние, чтобы вы сами смогли забрать заказ.</div>
+
+                </div>
+                <div class="addresses_block">
+                    <div class="red_text">Условия оплаты</div>
+
+                    <div style="display: flex; gap: 16px;">
+                        <div class="grey_text" style="border-right: 1px solid #D7D4CC;">
+                            Наличными или банковской картой — при получении заказа
+                        </div>
+                        <div class="grey_text">
+                            Банковской картой — при оформлении на сайте
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="addres_block_flex container">
+            <div class="addres_block_flex_left">Начинаем готовить только после вашего заказа!</div>
+            <div class="addres_block_flex_right">
+                <div class="addresses_block">
+
+                    <div class="grey_text">Sushi-City (Чита) – это возможность заказать роллы, суши и другие блюда
+                        японской и китайской кухни с доставкой на дом
+                        или в офис. Мы рады предложить нашим клиентам продукцию безупречного качества по доступной
+                        стоимости. Доставку можно
+                        оформить на любое удобное для вас время.Широкий ассортимент суши и роллов удовлетворит вкусы
+                        даже требовательных
+                        гурманов и позволит лакомиться разными деликатесами каждый день.</div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <div class="enter_modal" style="display:none">
+        <div class="form-container">
+            <p class="title">Войти</p>
+            <form class="form">
+                <input name="phone" id="enter-phone" type="text" class="input" placeholder="Телефон" inputmode="tel">
+                <input type="password" class="input" placeholder="Пароль">
+                <p class="page-link">
+                    <span class="page-link-label">Забыли пароль?</span>
+                </p>
+                <button class="form-btn">Войти</button>
+            </form>
+            <p class="sign-up-label">
+                Нет аккаунта?<span class="sign-up-link"><a href="register.html">Зарегистрироваться</a></span>
+            </p>
+            <div class="buttons-container">
+
+            </div>
+            <div class="btn-close-modal-window">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="#CECECE" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.8787 18.0001L0.939331 3.06077L3.06065 0.939453L18 15.8788L32.9393 0.939453L35.0607 3.06077L20.1213 18.0001L35.0607 32.9395L32.9393 35.0608L18 20.1214L3.06065 35.0608L0.939331 32.9395L15.8787 18.0001Z" />
+                </svg>
+
+            </div>
+        </div>
+        <div class="modal-window-background">
+        </div>
+    </div>
+    <div class="mobile-menu">
+
+
+        <div class="ico-wrapper d-flex justify-content-center align-items-center " data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            <img src="images/burger.png" alt="" class="img-fluid">
+        </div>
+    </div>
+
+
+    <footer>
+        <hr class="mw-1032 m-auto mb-24">
+        <div class="container mw-1032 p-0">
+            <H1 class="p-0 header-text color-red">Служба доставки Sushi City это:</H1>
+            <p class="p-0 m-0 main-description mb-24">
+            <ul class="column">
+                <li>• Продукция только из-под ножа по демократичным ценам;</li>
+                <li>• Акции, подарки, бонусы еженедельно;</li>
+                <li>• Оперативная доставка за 59 минут;</li>
+                <li>• Классическая технология приготовления любимых роллов;</li>
+                <li>• Профессиональная команда поваров и приветливых администраторов.</li>
+            </ul>
+            </p>
+        </div>
+        <hr class="mw-1032 m-auto">
+
+        <div class="container mw-1032 mt-48 p-0">
+            <div class="row">
+                <div class="col-lg-8 p-0">
+                    <p class="footer-text m-0">
+                        © 2013 - 2023 Сеть магазинов и интернет-магазин японской кухни Sushi-City (Суши-Сити)
+                    </p>
+                </div>
+                <div class="col p-0">
+                    <p class="footer-text m-0 text-start text-lg-end">
+                        Следите за нами в своей любимой социальной сети
+                    </p>
+                </div>
+            </div>
+            <div class="row mb-48">
+                <div class="col-lg-8 p-0 footer_links">
+                    <a href="catalog.html#sets" class="footer-link">Сеты</a>
+                    <a href="catalog.html#rolls" class="footer-link">Роллы</a>
+                    <a href="catalog.html#sushi" class="footer-link">Суши</a>
+                    <a href="catalog.html#" class="footer-link">Собери набор</a>
+                    <a href="catalog.html#wok" class="footer-link">ВОК</a>
+                    <a href="catalog.html#bisnes" class="footer-link">Бизнес-ланчи</a>
+                    <a href="catalog.html#hot" class="footer-link">Горячие блюда</a>
+                    <a href="catalog.html#allforsushi" class="footer-link">Все для суши</a>
+                    <a href="catalog.html#drink" class="footer-link">Напитки</a>
+                    <a href="catalog.html#dessert" class="footer-link">Десерты</a>
+                </div>
+                <div class="col p-0 d-flex flex-row justify-content-end" style="gap: 15px;">
+                    <a href="https://vk.com/sushicity.chita"><img src="images/vk_ico.png" alt=""
+                            class="img-fluid me-12"></a>
+                    <a href="https://ok.ru/sushicity.chita"><img src="images/ok_ico.png" alt="" class="img-fluid"></a>
+                </div>
+            </div>
+            <div class="row mb-8">
+                <div class="col p-0 d-flex flex-row flex-wrap" style="gap: 25px;">
+                    <a href="#" class="footer-text me-24">Положение о порядке хранения персональных данных</a>
+                    <a href="#" class="footer-text me-24">Реквизиты юридического лица</a>
+                    <a href="#" class="footer-text">Публичная оферта</a>
+                </div>
+            </div>
+            <div class="row mb-48">
+                <div class="col p-0 d-flex flex-row" style="gap: 25px;">
+                    <img src="images/visa.png" alt="" class="img-fluid me-18">
+                    <img src="images/master.png" alt="" class="img-fluid me-18">
+                    <img src="images/mir.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+    <script src="js/modal.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+
+</html>
