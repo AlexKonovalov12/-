@@ -1621,7 +1621,7 @@ nav a:hover {
 
     &:hover {
         background: #EB1C24;
-            color: #ffffff;
+        color: #ffffff;
     }
 }
 
@@ -2216,8 +2216,30 @@ p.last_order_product_quantity {
     text-decoration: none;
     color: #eb1c23bd;
     font-size: 30px;
+
     &:hover {
         color: #EB1C24;
+    }
+}
+
+.bonus_card {
+    height: 170px;
+    border-radius: 8px;
+    background: #C8C2B1;
+    width: 568px;
+    padding: 15px;
+    margin-bottom: 25px;
+
+    & p {
+        font-family: 'SF Pro Text';
+        font-weight: 500;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    & span {
+        color: #EB1C24;
+        
     }
 }
 
@@ -2514,6 +2536,10 @@ p.last_order_product_quantity {
 
     .form-floating textarea {
         width: 100%;
+    }
+
+    .ml-50 {
+        margin-left: 0px;
     }
 
     .ml-62 {
