@@ -87,6 +87,7 @@ myCart.products = cardAddArr.forEach((cardAdd) => {
         myCart.products = savedCart.products;
         myCart.addProduct(product);
         changeLocalStorage()
+        popupContainerFill()
     });
 });
 
@@ -109,6 +110,7 @@ myCart.products = cardPlusButtonsArr.forEach((cardPlus) => {
         setTimeout(() => {
             e.target.classList.remove("plus_selected");
         }, 100);
+        popupContainerFill()
     });
 });
 
@@ -136,6 +138,7 @@ myCart.products = cardMinusButtonsArr.forEach((cardMinus) => {
             setTimeout(() => {
                 e.target.classList.remove("plus_selected");
             }, 100);
+            popupContainerFill()
             return;
         }
 
@@ -144,6 +147,7 @@ myCart.products = cardMinusButtonsArr.forEach((cardMinus) => {
         setTimeout(() => {
             e.target.classList.remove("plus_selected");
         }, 100);
+        popupContainerFill()
     });
 });
 
