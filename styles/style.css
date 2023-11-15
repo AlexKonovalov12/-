@@ -2317,6 +2317,7 @@ iframe {
 .order_map {
     margin-bottom: 40px;
     display: none;
+    width: 568px;
 }
 
 .order_map-show {
