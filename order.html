@@ -151,14 +151,29 @@
                     <div class="row  m-0 mb-48">
                         <div class="col-lg-8 col-12 m-0 p-0">
                             <div class="row m-0 p-0 mb-24">
-                                <a href="#" class="grey-button mb-0 selected mr-8">
+                                <div class="grey-button mb-0 selected mr-8" id="delivery">
                                     Доставка
-                                </a>
-                                <a href="#" class="grey-button mb-0 mr-8">
+                                </div>
+                                <div class="grey-button mb-0 mr-8" id="pickup">
                                     Самовывоз
-                                </a>
+                                </div>
+                            </div>
+                            <div class="order_map">
+                                <iframe
+                                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A5582f03f105b44e6d8601fe3abb573452423091ea2c7b99cdece8246bb90e518&amp;source=constructor"
+                                    width="100%" height="277" frameborder="0"></iframe>
+                                <div class="selection-field mb-8">
+                                    <select>
+                                        <option>--Выберите адрес самовывоза</option>
+                                        <option>Фадеева, 39</option>
+                                        <option>Карла-Маркса, 93</option>
+                                        <option>Ленинградская, 32</option>
+                                       
+                                    </select>
+                                </div>
                             </div>
                             <form class="cart-form" id="order_form" novalidate>
+
                                 <div class="form-floating">
                                     <input class="form-control cart-input mb-8" type="text" name="name"
                                         placeholder="Имя" id="username" required>
@@ -235,7 +250,7 @@
 
                         <h1 class="cart-order-header mb-24">Способы оплаты:</h1>
                         <div class="row p-0 m-0 mb-48">
-                            <div class="col p-0 m-0 d-flex flex-row">
+                            <div class="col p-0 m-0 d-flex pay_buttons">
                                 <a href="#" class="big-grey-button big-grey-button-selected">Оплата картой на
                                     сайте</a>
                                 <a href="#" class="big-grey-button ">Оплата картой курьеру</a>
@@ -355,6 +370,30 @@
     <script src="js/catalog.js"></script>
     <script src="js/forms-validation.js"></script>
     <script>
+        let switchButtons = Array.from(document.querySelectorAll(".grey-button"));
+        let mapContainer = document.querySelector(".order_map");
+
+        switchButtons.forEach((el) => {
+            el.addEventListener('click', () => {
+                el.parentElement.querySelector(".selected").classList.remove("selected");
+                el.classList.add("selected")
+                if (el.id == "pickup") {
+                    mapContainer.classList.add("order_map-show");
+                    
+                } else {
+                     mapContainer.classList.remove("order_map-show");
+                }
+
+            })
+            
+        });
+
+
+
+
+
+
+
         (function popupContainerFill() {
             const popupContainer = document.querySelector("#popup_container");
             const popupProductList = document.querySelector("#popup_product_list");

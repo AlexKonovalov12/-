@@ -154,7 +154,6 @@ myCart.products = cardMinusButtonsArr.forEach((cardMinus) => {
 let emptyCart = document.querySelector(".empty-cart");
 let fillCart = document.querySelector(".fill-cart");
 
-
 function popupContainerFill() {
     const popupProductList = document.querySelector("#popup_product_list");
     const popupCost = document.querySelector("#popup_cost");

@@ -150,7 +150,7 @@
                     </div>
                     <div class="empty-cart row  m-0 mb-48">
                        <h2 class="empty_header">Вы еще ничего не добавили в корзину...</h2>
-                       <a href="catalog.html" class="empty_link">Давайте сделаем это!</a>
+                       <a href="catalog.html" class="empty_link">Перейти в меню</a>
                     </div>
 
                     <div class="fill-cart row  m-0 mb-48">
@@ -161,8 +161,9 @@
 
                         </div>
 
-                        <p class="sauces_head">Не забудьте добавить в заказ соусы*:</p>
+                        <p class="sauces_head">Не забудьте добавить в заказ соусы!*:</p>
                         <p>*Васаби и имбирь не входят в комплект заказа.</p>
+                        <p class="add-sauce">Добавить соусы</p>
                         <div class="sauces_container">
                             <div class="product-card sauce-card"> 
                                 <img src="images/sauces/1.jpg" alt="" class="product-catalog-img img-fluid d-block mb-8">
@@ -527,7 +528,15 @@
         </script>
     <script src="js/catalog.js"></script>
     <script src="js/modal.js"></script>
-    
+    <script>
+        let addSauce = document.querySelector(".add-sauce");
+            let sauceContainer = document.querySelector(".sauces_container");
+
+            addSauce.addEventListener('click', () => {
+                sauceContainer.classList.toggle("add-sauce-block-show");
+            })
+
+    </script>
 
 </body>
 
