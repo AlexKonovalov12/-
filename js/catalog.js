@@ -3,6 +3,7 @@ class Product {
         this.imageSrc = productCard.querySelector("img").src;
         this.name = productCard.querySelector(".product-name").innerText;
         this.price = productCard.querySelector(".product_price").innerText;
+        this.id = productCard.querySelector(".product-name").getAttribute('id');
         this.quantity = 0
     }
 }
@@ -43,8 +44,9 @@ const cardAddArr = Array.from(document.querySelectorAll(".add_to_cart"));
 const cardButtonsArr = Array.from(document.querySelectorAll(".cart_buttons"));
 const cardPlusButtonsArr = Array.from(document.querySelectorAll(".button-plus"));
 const cardMinusButtonsArr = Array.from(document.querySelectorAll(".button-minus"));
-const cartNum = document.querySelector("#cart_num");
 const cart = document.querySelector("#cart");
+const toCartButton = document.querySelector(".to-cart-button");
+const cartSum = document.querySelector("#cart_sum");
 
 function toNum(str) {
     const num = parseInt(str.replace(/ /g, ""));
@@ -69,11 +71,16 @@ if (localStorage.getItem("cart") == null) {
 
 const savedCart = JSON.parse(localStorage.getItem("cart"));
 myCart.products = savedCart.products;
-cartNum.textContent = myCart.count;
+if (toCartButton && myCart.products.length > 0 ) {
+    toCartButton.classList.add("to-cart-button-show");
+    cartSum.textContent = toCurrency(myCart.cost);
+}
 
 function changeLocalStorage() {
     localStorage.setItem("cart", JSON.stringify(myCart));
-    cartNum.textContent = myCart.count;
+    if (toCartButton) {
+        cartSum.textContent = toCurrency(myCart.cost);
+    }
 }
 
 
@@ -85,7 +92,13 @@ myCart.products = cardAddArr.forEach((cardAdd) => {
         productCard.querySelector(".cart_buttons").style.display = "flex";
         const product = new Product(productCard);
         myCart.products = savedCart.products;
+        if (myCart.products.length == 0) {
+            toCartButton.classList.add("to-cart-button-show");
+        }
         myCart.addProduct(product);
+        if (toCartButton) {
+            cartSum.textContent = toCurrency(myCart.cost);
+        }
         changeLocalStorage()
         popupContainerFill()
     });
@@ -94,7 +107,6 @@ myCart.products = cardAddArr.forEach((cardAdd) => {
 myCart.products = cardPlusButtonsArr.forEach((cardPlus) => {
     cardPlus.addEventListener("click", (e) => {
         e.preventDefault();
-
         e.target.classList.add("plus_selected");
         const productCard = e.target.closest(".product-card");
         const product = new Product(productCard);
@@ -158,11 +170,15 @@ function popupContainerFill() {
     const popupProductList = document.querySelector("#popup_product_list");
     const popupCost = document.querySelector("#popup_cost");
 
+if (popupProductList != null) {
     popupProductList.innerHTML = null;
+    }
     const savedCart = JSON.parse(localStorage.getItem("cart"));
     myCart.products = savedCart.products;
     if (myCart.products.length > 0) {
+        
         emptyCart.style.display = 'none';
+        
         fillCart.style.display = 'block';
         const productsHTML = myCart.products.map((product) => {
             const productItem = document.createElement("div");
@@ -265,7 +281,10 @@ function popupContainerFill() {
 
         popupCost.value = toCurrency(myCart.cost);
     } else {
+        
         emptyCart.style.display = 'block';
+        
+        
         fillCart.style.display = 'none';
     }
     
